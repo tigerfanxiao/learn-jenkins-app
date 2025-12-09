@@ -1,7 +1,7 @@
 pipeline {
     agent any
     stages {
-        /*
+        
         stage('Build') {
             agent {
                 docker {
@@ -20,7 +20,7 @@ pipeline {
                 '''
             }
         }
-        */
+        
         stage('Test') {
             agent {
                 docker {
@@ -29,6 +29,7 @@ pipeline {
                 }
             }
             steps {
+                cleanWs() 
                 sh '''
                 #test -f build/index.html
                 echo "Test stage"
