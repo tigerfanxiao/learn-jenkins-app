@@ -29,7 +29,6 @@ pipeline {
                 }
             }
             steps {
-                cleanWs() 
                 sh '''
                 #test -f build/index.html
                 echo "Test stage"
