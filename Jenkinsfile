@@ -86,7 +86,7 @@ pipeline {
                     node_modules/.bin/netlify --version
                     echo "Deploying to production. Site ID: $NETLIFY_SITE_ID"
                     node_modules/.bin/netlify status
-                    node_modules/.bin/netlify deploy --dir=build > deploy_out.json
+                    node_modules/.bin/netlify deploy --dir=build --json > deploy_out.json
                     node_modules/.bin/node-jq -r '.deploy_url' deploy_out.json
                 '''
                 script {
